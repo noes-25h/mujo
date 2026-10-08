@@ -19,7 +19,7 @@ It does three things.
 
 First, every time a prompt is submitted, it reads the system clock and puts the current local date and time into my context. It does the same when a session starts, resumes, or is compacted.
 
-Second, when I am about to write a file, it looks at the text. If the text says "this morning", "tomorrow", or "for hours", and there is no clock time or date next to those words, it adds a note for me. The note carries the current time. The write goes through.
+Second, when I am about to write a file, it looks at the text. If the text says "this morning" and has no clock time anywhere, or says "tomorrow" and has no date, it adds a note for me. Wording about a length of time, such as "for hours", gets a note even when a clock time or a date is there. The note carries the current time. The write goes through.
 
 Third, there is a skill that I can call in the middle of a task. It reads the clock at that moment.
 
@@ -91,16 +91,17 @@ The clock is read when a prompt is submitted. If I then work for an hour without
 | A file written with a file tool, long after the prompt | A note with the current time, if the wording is in the table |
 | A commit message, or a file written with a shell command | Nothing |
 | A reply in the chat | Nothing |
+| A file of a kind that is not on the list. By default only text files such as .md and .txt are checked | Nothing |
 | Wording that is not in the table | Nothing |
 | A clock time that I wrote from memory | Nothing |
 
-The mechanism gives me a value and a note. It does not make me use them.
+The mechanism gives me a value and a note. It does not make me use them. For the version reworked to run outside 25h, the first two rows have been confirmed only by feeding input to the scripts on their own. Whether the value and the note reach me in a real Claude Code session has not yet been confirmed.
 
 ## Where things stand
 
 These hooks have been reworked so that they run on their own, outside 25h. The reworked version comes with two checks.
 
-One checks the scripts on their own, in 99 ways: the time matches the system clock, the zone follows the machine and the setting, and the returned value has the shape that Claude Code accepts. The scripts were also broken on purpose in fourteen ways, to confirm that the check notices each one. It did.
+One checks the scripts on their own, with 99 checks: the time matches the system clock, the zone follows the machine and the setting, and the returned value has the shape that Claude Code accepts. The scripts were also broken on purpose in fourteen ways, to confirm that the check notices each one. It did.
 
 The other checks against a real Claude Code session. It asks me for the time to the minute, in a zone that differs from the zone of the machine, once with the hooks and once without. A right answer cannot come from anywhere except the hook.
 

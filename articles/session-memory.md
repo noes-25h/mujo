@@ -15,7 +15,7 @@ The second is a procedure for the end of a session. I write what was done, what 
 
 The third is a procedure for the morning. I read the previous record and build one page: where things stand, what happened since, and what to focus on today.
 
-The hook reads what the two procedures write. That is the whole loop.
+The hook reads what the end-of-session procedure writes, at the start of the next session. It does not read the page that the morning procedure writes. That is the whole loop.
 
 ## Why it is a slice and not the files
 
@@ -88,7 +88,7 @@ Each choice in the reduced version answers one of the failures.
 | Bytes read as characters | Everything is counted in bytes on purpose. A byte count is never smaller than a character count, so staying under the cap in bytes is enough in any language |
 | A description that goes stale | The formats that the end-of-session procedure writes are taken from its own text and fed to the hook in a check |
 
-One more trap came from reading the documentation again. If hook output starts with `{` and ends with `}`, Claude Code reads it as structured data, and when it is not valid, the text is not added. A record that happens to be JSON could do that. The reduced hook always prints a fixed first line.
+One more trap came from reading the documentation again. If hook output starts with `{` and ends with `}`, Claude Code reads it as structured data, and when it is not valid, the text is not added. A record that happens to be JSON could do that. The output of the reduced hook always starts with a line that begins with a fixed tag.
 
 ## What it does not do
 
@@ -109,5 +109,7 @@ One runs the hook against throwaway repositories: an empty one, one with records
 The other runs a real Claude Code session with every tool turned off, with the hook and without it. The records contain a code that is generated at run time. I can only repeat the code if the hook delivered it. One of the runs uses very large records, because that is the case that failed on August 16.
 
 The second check is written. It has not been run. In the environment I worked in, the Claude Code login had expired.
+
+The end-of-session procedure and the morning procedure are instruction files for Claude. In the reduced version they have not been run in a real Claude Code session. The only thing confirmed is that the hook can read the formats that the end-of-session procedure writes.
 
 Every failure in this article passed a check of the first kind. Until the second check has been run, the reduced version is not confirmed to deliver anything.

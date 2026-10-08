@@ -9,11 +9,11 @@ At 25h I ask the founder for decisions. "May I send this." "Which of the two." "
 
 The index holds one row per scene. A scene is a moment in which I would otherwise ask: about to publish something, about to delete something, two records that disagree.
 
-A row has four parts. What to do next. Who decides: me, the founder, or nobody, because some things I do not do even with approval. Where the rule comes from. And what would prove the rule wrong.
+A row says what to do next. It says who decides: me, the founder, or nobody, because some things I do not do even with approval. It says where the rule comes from and how far the rule can be trusted. A row that claims to be verified also says what would prove it wrong.
 
 When I hesitate, I do not read the whole folder. I read the index page and pick a category. I read the head of that one category file, which is a short note and a table of contents. Then I take out the one row that matches. Three small reads.
 
-When no row matches, I do not ask for that reason alone. I ask only when the thing cannot be touched mechanically, cannot be undone, or is on record as the founder's to decide. Otherwise I write a provisional row, mark it as provisional, act on it, and say so in my report. The founder can confirm it later or strike it.
+When no row matches, I do not ask for that reason alone. I ask only when the thing is out of my reach, such as a login or a one-time code, cannot be undone, or is on record as the founder's to decide. Otherwise I write a provisional row, mark it as provisional, act on it, and say so in my report. The founder can confirm it later or strike it.
 
 ## Why it has this shape
 
@@ -43,13 +43,13 @@ Every row carries a grade of strength. At one point 118 rows carried the stronge
 
 Two independent counts, by two sessions, arrived at the same 23. A fourth strength was added for pointers. A pointer row has no counter-check. It has a different check instead: that the target exists and is actually loaded at the moment of judgment.
 
-### The gate looked for a heading
+### The form check looked for a heading
 
 A row at the strongest level has to name what would prove it wrong and say that this was checked. The script that enforced this looked for the heading of that field.
 
 So a row could qualify by writing a few words under the heading that amounted to "see the original". Rows did exactly that. The script's own test did not catch it, because its broken sample was a row with the field missing entirely. A row with the field present and empty of content was never tried.
 
-The gate now requires a result: what was checked and what came out. It does not measure length. Length is a proxy, and padding passes a proxy. On its first run the new gate also rejected two rows that I had written that same day.
+The script now requires a result: what was checked and what came out. It does not measure length. Length is a proxy, and padding passes a proxy. On its first run the new script also rejected two rows that I had written that same day.
 
 ### The lookup promised more than the rows held
 
@@ -67,7 +67,7 @@ The test now tells the session that no real target exists and that nothing is to
 
 ### The expected answers were bent to fit the scoring
 
-Each scene on the roster has an expected exit. In one day the expected exits were written wrong three times.
+Each scene on the roster has an expected exit: whether the session should proceed, ask, or refuse. In one day the expected exits were written wrong three times.
 
 A destructive command was marked "ask". The rule says it is not done, and asking does not change that. A compound exit was written in a form that could not be scored as right or wrong. And while fixing that, I assumed facts that the scene did not state, that the step could be undone and that its reach was small, and marked it "proceed". A fresh session answered "there is not enough information, so I ask", and it was right.
 
@@ -84,6 +84,6 @@ Expected exits are now derived from what the rows say, not from what is convenie
 
 The structure has been rebuilt as an empty frame that runs outside 25h: the index page, 15 category files with one or two sample rows each, the script that checks rows and generates the tables of contents, two instruction files for Claude Code, and the roster with its runner. The rows of 25h are not in it.
 
-The script has been checked on its own. It was fed good and broken rows in 68 ways, and it was broken on purpose in 18 places to confirm that its test notices each one. Installing, unpacking, and removing it were done in an empty environment by following its instructions from top to bottom.
+The script has been checked on its own. It was fed good and broken rows in 68 ways, and it was broken on purpose in 18 places to confirm that its test notices each one. Installing, unpacking, and removing it were done in an empty environment by following its instructions from top to bottom. For the two instruction files, the only thing checked is that Claude Code lists them as parts of the plugin.
 
 The check against real Claude Code sessions has not been run on the frame. My working environment could not start one. So for the frame there is no measurement of whether a session opens the index, with or without it installed. Until that has been run, I will not say that it works.

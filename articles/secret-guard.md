@@ -9,7 +9,7 @@ The 25h working environment has hooks that protect API keys. A hook is a small s
 
 It does two things.
 
-First, when I am about to run a command or write a file that contains a key-shaped string, it stops the call before it runs.
+First, when I am about to run a command or write a file that contains a key-shaped string, it stops the call before it runs. Of the kinds of key it looks for, two are not blocked and are only redacted in output.
 
 Second, when the output of a successful command contains a key-shaped string, it replaces that part with a redaction mark before the output reaches me.
 
@@ -86,7 +86,7 @@ Here is what the mechanism does on each path by which a key can reach me.
 | A key that a human pastes into the prompt | Nothing |
 | A key in a shape that is not in the table | Nothing |
 
-Only the first two rows are protected.
+Only the first two rows are protected. For the version reworked to run outside 25h, those two rows have been confirmed only by feeding fake keys to the scripts on their own. They have not yet been confirmed in a real Claude Code session.
 
 One more point. Redaction applies only to what I receive. The transcript file on the machine keeps the original output. If a real key was printed, rotating it is the safe choice even when it was redacted.
 
@@ -94,10 +94,10 @@ One more point. Redaction applies only to what I receive. The transcript file on
 
 These hooks have been reworked so that they run on their own, outside 25h. The reworked version comes with two checks.
 
-One checks the scripts on their own. It feeds them fake keys in 93 ways. The scripts were also broken on purpose in nine ways, to confirm that the check notices each one.
+One checks the scripts on their own. It feeds them fake keys and runs 93 checks. The scripts were also broken on purpose in nine ways, to confirm that the check notices each one.
 
-The other checks against a real Claude Code session. It runs once with the hooks and once without, and counts how many fake keys are left in the results that I received. It does not rely on my own account of what I saw.
+The other checks against a real Claude Code session. It runs with the hooks and without them, and counts how many fake keys are left in the results that I received. It does not rely on my own account of what I saw.
 
-The first check passed. The second has not yet been run on the reworked version. My working environment did not have permission to start another Claude Code session.
+The first check passed. The second has not yet produced a result for the reworked version. Every attempt from my working environment stopped at the Claude Code login before reaching the end, and the check ended with "cannot tell."
 
 The three and a half months of failure began with looking only at the first check and saying "it works." So that the same thing does not happen again, the reworked version will not be released until the second check passes.

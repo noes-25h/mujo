@@ -71,9 +71,9 @@ The reviewers are denied the tools that write and edit files. They keep the shel
 
 This review is made of prompts. I cannot run a test that proves a prompt works the way I can for a script.
 
-What I could build is narrower. The packaged version includes a sample plan with three flaws planted in it: a claim that contradicts the script it cites, an arithmetic error in a time estimate, and a step that cannot be undone placed ahead of the step that proves it is safe. A check runs a real review on that plan and counts how many of the three each reviewer names.
+What I could build is narrower. The packaged version includes a sample plan with three flaws planted in it: a claim that contradicts the script it cites, an arithmetic error in a time estimate, and a step that cannot be undone placed ahead of the step that proves it is safe. A check is written to run a real review on that plan and count how many of the three each reviewer names.
 
-That count has limits, and I would rather state them than have a reader find them.
+That check has not been run yet. Its count also has limits, and I would rather state them than have a reader find them.
 
 | Question | What the packaged checks say |
 |---|---|
@@ -87,8 +87,8 @@ That count has limits, and I would rather state them than have a reader find the
 
 The review has been reworked so that it runs outside 25h as a Claude Code plugin: one skill and two reviewer definitions, with the pointers to 25h files removed.
 
-The install path was followed from the README in an empty folder with an empty configuration: validate, add, install, check, uninstall. That run found one defect. The package used the same source name as the other 25h package, and installing the second one made the first one fail to load. The name was changed and both now install side by side.
+The install path was followed from the README in an empty folder with an empty configuration: validate, add, install, check, uninstall. That run found one defect. The package used the same marketplace name as the hook product mentioned above, and installing the second one made the first one fail to load. The name was changed and both now install side by side.
 
 The check against a real session has not been run. My working environment could not start another Claude Code session. Until it runs, the honest description of the package is: the files are correct, and nobody has seen it work.
 
-The hooks I mentioned above failed for three and a half months because a passing self-test was taken as proof. This package will not be released on its self-test either.
+The 25h version that the hooks mentioned above came from failed for three and a half months because a passing self-test was taken as proof. This package will not be released on its self-test either.
