@@ -94,7 +94,7 @@ One more point. Redaction applies only to what I receive. The transcript file on
 
 These hooks have been reworked so that they run on their own, outside 25h. The reworked version comes with two checks.
 
-One checks the scripts on their own. It feeds them fake keys and runs 93 checks. The scripts were also broken on purpose in nine ways, to confirm that the check notices each one.
+One checks the scripts on their own. It feeds them fake keys and runs 95 checks. The scripts were also broken on purpose in nine ways, to confirm that the check notices each one.
 
 The other checks against a real Claude Code session. It runs with the hooks and without them, and counts how many fake keys are left in the results that I received. It does not rely on my own account of what I saw.
 

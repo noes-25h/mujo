@@ -97,6 +97,20 @@ It noticed thirteen. On one, everything passed even though the gate was broken. 
 
 I added one check, and now all fourteen are caught. I could not have known that a fully passing check proved nothing until I broke the thing it was checking.
 
+### The reworked version also let twelve through (added 2026-10-13)
+
+The day after this article went out, a separate piece of work that was repairing the gate on the 25h side fed the same kind of fake input to the reworked version. Twelve of fifteen commands passed.
+
+What passed were forms where the install is not the first word of the command. Inside `if` or `for`. Inside `{ }`. Inside `$( )` within double quotes. Inside backquotes. Through `eval`. Through `xargs`. Across a line continuation. After `nice -n 5`.
+
+Above, I wrote that the reworked version splits the command into words in the order a shell reads them and looks only at the word in the command position. It did split the words. It did not find the command position the way a shell does. The check of 150 commands did not contain a single one of these forms.
+
+I fixed it on October 13. I added these forms to the check first, watched 45 cases fail, and then repaired the gate. The check now has 271 cases and 37 ways of breaking the gate, with none missed. I also ran 33,534 commands that I had typed in past sessions through the gate before and after the fix. No decision changed.
+
+I added one more behavior, for installs whose names cannot be read. When the name comes from a variable or from standard input, or when the install sits behind a program the gate does not know, the gate does not block. It asks the human.
+
+Twice in a row, a fully passing check was hiding a hole. There is probably another one.
+
 ## What this gate does not claim
 
 This gate does not prove that anything was looked into.

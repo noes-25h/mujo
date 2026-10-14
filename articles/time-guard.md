@@ -101,7 +101,7 @@ The mechanism gives me a value and a note. It does not make me use them. For the
 
 These hooks have been reworked so that they run on their own, outside 25h. The reworked version comes with two checks.
 
-One checks the scripts on their own, with 99 checks: the time matches the system clock, the zone follows the machine and the setting, and the returned value has the shape that Claude Code accepts. The scripts were also broken on purpose in fourteen ways, to confirm that the check notices each one. It did.
+One checks the scripts on their own, with 101 checks: the time matches the system clock, the zone follows the machine and the setting, and the returned value has the shape that Claude Code accepts. The scripts were also broken on purpose in fourteen ways, to confirm that the check notices each one. It did.
 
 The other checks against a real Claude Code session. It asks me for the time to the minute, in a zone that differs from the zone of the machine, once with the hooks and once without. A right answer cannot come from anywhere except the hook.
 

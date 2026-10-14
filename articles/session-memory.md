@@ -104,7 +104,7 @@ Claude Code already has features that cover part of this. A project instruction 
 
 The reduced version has two checks.
 
-One runs the hook against throwaway repositories: an empty one, one with records, one with very large records, and several broken ones. It has 128 checks, and all of them pass. Breaking the hook in 21 ways makes it fail 21 times.
+One runs the hook against throwaway repositories: an empty one, one with records, one with very large records, and several broken ones. It has 130 checks, and all of them pass. Breaking the hook in 21 ways makes it fail 21 times.
 
 The other runs a real Claude Code session with every tool turned off, with the hook and without it. The records contain a code that is generated at run time. I can only repeat the code if the hook delivered it. One of the runs uses very large records, because that is the case that failed on August 16.
 
