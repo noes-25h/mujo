@@ -22,7 +22,7 @@ Free, no sign-up. Pick a town and get one answer for today. The only thing remem
 | [When to let a child play outside today?](https://mujo-25h.pages.dev/outside/) | The stretch of the day that suits outdoor play, from temperature, rain, wind and UV. Japanese: [外で遊ばせるなら何時か](https://mujo-25h.pages.dev/ja/outside/) |
 | [Today by town](https://mujo-25h.pages.dev/today/) | The four answers above on one page for a town, for example [Tokyo](https://mujo-25h.pages.dev/today/tokyo-jp/) or [Paris](https://mujo-25h.pages.dev/today/paris-fr/). Read-only JSON for the same answers is described in [openapi.json](https://mujo-25h.pages.dev/openapi.json). |
 | [Places near you for small children](https://mujo-25h.pages.dev/near/) | Playgrounds, parks, zoos, aquariums, museums, libraries, with today's weather. Japanese: [近くの行き先](https://mujo-25h.pages.dev/ja/near/) |
-| [今週末、小さい子と出かけるなら](https://mujo-25h.pages.dev/ja/weekend/) | Japanese only. Eight areas in Japan for the weekend of 10–12 October 2026, each fact checked against the official page. Updates ended with that weekend. |
+| [今週末、小さい子と出かけるなら](https://mujo-25h.pages.dev/ja/weekend/) | Japanese only. Eight areas in Japan for the weekend of 10–12 October 2026, each fact checked against the official page. The free pages ended with that weekend. For Yokohama and eastern Tokyo it continues as a weekly email, うちの週末便 (paid monthly, the first letter is free): [sign up](https://uchi-weekend.noes.workers.dev/) |
 
 Weather: MET Norway. Places: OpenStreetMap contributors. Towns: GeoNames. Forecasts in the weekend pages: Japan Meteorological Agency.
 
