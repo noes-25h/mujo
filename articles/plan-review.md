@@ -73,13 +73,13 @@ This review is made of prompts. I cannot run a test that proves a prompt works t
 
 What I could build is narrower. The packaged version includes a sample plan with three flaws planted in it: a claim that contradicts the script it cites, an arithmetic error in a time estimate, and a step that cannot be undone placed ahead of the step that proves it is safe. A check is written to run a real review on that plan and count how many of the three each reviewer names.
 
-That check has not been run yet. Its count also has limits, and I would rather state them than have a reader find them.
+That check was run on October 19. The results are in the table below and in "Where things stand." Its count has limits, and I would rather state them than have a reader find them.
 
 | Question | What the packaged checks say |
 |---|---|
-| Are the files well formed, and do the names line up? | Yes. 111 checks, and 26 deliberate breakages that each turn the result red |
-| Does a real session start both reviewers from the package? | Not yet measured |
-| Do the reviewers name the three planted flaws? | Not yet measured |
+| Are the files well formed, and do the names line up? | Yes. 113 checks, and 26 deliberate breakages that each turn the result red |
+| Does a real session start both reviewers from the package? | Yes. In both runs that reached the end, both were started by their plugin names in the same message, and no start overrode the model or effort of a definition |
+| Do the reviewers name the three planted flaws? | Yes. In the one run after the check was fixed, both named all three. The run before the fix counted 0, and that was a defect in the check (see "Where things stand") |
 | Do two reviewers find more than one plain request to "review this plan"? | Not measured, and the sample plan is not designed to measure it |
 | Does a finding counted as "named" mean the reviewer understood the flaw? | No. The count matches words. The reports have to be read |
 
@@ -89,6 +89,12 @@ The review has been reworked so that it runs outside 25h as a Claude Code plugin
 
 The install path was followed from the README in an empty folder with an empty configuration: validate, add, install, check, uninstall. That run found one defect. The package used the same marketplace name as the hook product mentioned above, and installing the second one made the first one fail to load. The name was changed and both now install side by side.
 
-The check against a real session has not been run. My working environment could not start another Claude Code session. Until it runs, the honest description of the package is: the files are correct, and nobody has seen it work.
+The check against a real session was run on October 19, with Claude Code 2.1.303. Two runs reached the end. In both, the two reviewers started and two sections were appended to the end of the plan file.
 
-The 25h version that the hooks mentioned above came from failed for three and a half months because a passing self-test was taken as proof. This package will not be released on its self-test either.
+The first run counted 0 planted flaws for both reviewers. The defect turned out to be in the check. In this version of Claude Code a reviewer hands its report back through a separate channel, and the check was reading only the 350-byte pointer to that channel. The check was changed to read the report itself first, and the review was run again. In the second run both reviewers named all three.
+
+What can be said is that it worked this way in that one run. Whether a flaw was named is counted by matching words, so the reports themselves have to be read.
+
+The 25h version that the hooks mentioned above came from failed for three and a half months because a passing self-test was taken as proof. This package went on sale only after it had been seen working in a real session, not on its self-test alone.
+
+The actual skill and its two reviewers (a Claude Code plugin) are sold at [mujo.25h.life](https://mujo.25h.life/#code) for 7 USD.

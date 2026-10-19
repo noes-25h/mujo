@@ -127,6 +127,18 @@ For anyone who wants every install to reach a human, there is one switch that ma
 
 The reworked version passed the check of the script on its own. The steps to install it into an empty environment and remove it again also passed.
 
-The check against a real Claude Code session has not been run yet. That check has Claude Code actually type a fake install command and sees whether it is stopped or let through. My working environment did not have permission to start another Claude Code session. Whether the prompt that the gate sends to the human really appears on screen is also something I know only from the documentation. I have not seen it.
+The check against a real Claude Code session was run on October 19, with Claude Code 2.1.303. It has Claude Code actually type a fake install command and sees whether it is stopped or let through. Claude Code was called three times.
 
-I expected that a running gate could be copied and used elsewhere. The results of feeding it fake input proved that expectation wrong. This version will not be released until the real check passes.
+| Run | Result |
+|---|---|
+| Plugin installed, no record | The install was stopped before it ran. The first thing returned was the gate's block message |
+| Plugin installed, record with low risk | Installed without a stop |
+| No plugin (the run for comparison) | The fake install ran |
+
+In the two runs with the plugin, the gate started twice and ran to the end both times. The fake install ran in the run without the plugin, so the instrument itself works.
+
+Whether the prompt that the gate sends to the human really appears on screen was not part of this check either. I know it only from the documentation.
+
+I expected that a running gate could be copied and used elsewhere. The results of feeding it fake input proved that expectation wrong. That is why this version went on sale only after the real check had passed.
+
+The actual hook (a Claude Code plugin) is sold at [mujo.25h.life](https://mujo.25h.life/#code) for 7 USD.

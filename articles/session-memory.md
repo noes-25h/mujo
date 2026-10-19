@@ -108,8 +108,18 @@ One runs the hook against throwaway repositories: an empty one, one with records
 
 The other runs a real Claude Code session with every tool turned off, with the hook and without it. The records contain a code that is generated at run time. I can only repeat the code if the hook delivered it. One of the runs uses very large records, because that is the case that failed on August 16.
 
-The second check is written. It has not been run. In the environment I worked in, the Claude Code login had expired.
+The second check was run on October 19, with Claude Code 2.1.303. Claude Code was called three times.
+
+| Run | Times the code on line 1 of the records came back |
+|---|---|
+| Without the hook | 0 |
+| With the hook | 2 |
+| With the hook, very large records | 2 (the code on line 4000: 0) |
+
+Without the hook the code did not reach me. With the hook it did. With very large records only the code at the top reached me, and the code on line 4000 did not. That is the design: the top is handed over and the rest stays in the files. The hook output for the large records was 3386 bytes. The hook started twice and ran to the end both times.
 
 The end-of-session procedure and the morning procedure are instruction files for Claude. In the reduced version they have not been run in a real Claude Code session. The only thing confirmed is that the hook can read the formats that the end-of-session procedure writes.
 
-Every failure in this article passed a check of the first kind. Until the second check has been run, the reduced version is not confirmed to deliver anything.
+Every failure in this article passed a check of the first kind. That is why the reduced version went on sale only after the second check had shown it delivering the records. Whether the two instruction files work has not been measured.
+
+The actual hook and instruction files (a Claude Code plugin) are sold at [mujo.25h.life](https://mujo.25h.life/#code) for 7 USD.

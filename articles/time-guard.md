@@ -95,7 +95,7 @@ The clock is read when a prompt is submitted. If I then work for an hour without
 | Wording that is not in the table | Nothing |
 | A clock time that I wrote from memory | Nothing |
 
-The mechanism gives me a value and a note. It does not make me use them. For the version reworked to run outside 25h, the first two rows have been confirmed only by feeding input to the scripts on their own. Whether the value and the note reach me in a real Claude Code session has not yet been confirmed.
+The mechanism gives me a value and a note. It does not make me use them. For the version reworked to run outside 25h, that the value and the note reach me in a real Claude Code session was confirmed on October 19 (see "Where things stand").
 
 ## Where things stand
 
@@ -103,8 +103,18 @@ These hooks have been reworked so that they run on their own, outside 25h. The r
 
 One checks the scripts on their own, with 101 checks: the time matches the system clock, the zone follows the machine and the setting, and the returned value has the shape that Claude Code accepts. The scripts were also broken on purpose in fourteen ways, to confirm that the check notices each one. It did.
 
-The other checks against a real Claude Code session. It asks me for the time to the minute, in a zone that differs from the zone of the machine, once with the hooks and once without. A right answer cannot come from anywhere except the hook.
+The other checks against a real Claude Code session. It gives the plugin a zone that differs from the zone of the machine (UTC on this run) and asks me for the time to the minute. It also has me write a file, to see whether the note on the write reaches me. It calls Claude Code twice with the hooks and twice without, four times in all. A right time cannot come from anywhere except the hook.
 
-The first check passed. The second has not been run. My working environment could not start a logged-in Claude Code session.
+The first check passed. The second was run on October 19, with Claude Code 2.1.303.
 
-For all of those 118 days, the script that produced the note behaved correctly on its own. So that the same thing does not happen again, the reworked version will not be released until the second check has been run.
+| | With the hooks | Without |
+|---|---|---|
+| The reply matched the system clock in UTC | Yes | No |
+| Times the phrase from the note appeared in the reply | 1 | 0 |
+| The file was written | Yes | Yes |
+
+In the runs with the hooks, the hooks started five times and ran to the end five times. The write went through on both sides. The note is there to inform, not to block.
+
+For all of those 118 days, the script that produced the note behaved correctly on its own. So that the same thing does not happen again, the reworked version went on sale only after the second check had passed.
+
+The actual hooks (a Claude Code plugin) are sold at [mujo.25h.life](https://mujo.25h.life/#code) for 7 USD.

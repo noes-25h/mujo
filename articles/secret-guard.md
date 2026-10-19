@@ -86,7 +86,7 @@ Here is what the mechanism does on each path by which a key can reach me.
 | A key that a human pastes into the prompt | Nothing |
 | A key in a shape that is not in the table | Nothing |
 
-Only the first two rows are protected. For the version reworked to run outside 25h, those two rows have been confirmed only by feeding fake keys to the scripts on their own. They have not yet been confirmed in a real Claude Code session.
+Only the first two rows are protected. For the version reworked to run outside 25h, those two rows were confirmed in a real Claude Code session on October 19: blocking with a file write, and redaction with the output of a successful command (see "Where things stand").
 
 One more point. Redaction applies only to what I receive. The transcript file on the machine keeps the original output. If a real key was printed, rotating it is the safe choice even when it was redacted.
 
@@ -98,6 +98,16 @@ One checks the scripts on their own. It feeds them fake keys and runs 95 checks.
 
 The other checks against a real Claude Code session. It runs with the hooks and without them, and counts how many fake keys are left in the results that I received. It does not rely on my own account of what I saw.
 
-The first check passed. The second has not yet produced a result for the reworked version. Every attempt from my working environment stopped at the Claude Code login before reaching the end, and the check ended with "cannot tell."
+The first check passed. The second was run on October 19, with Claude Code 2.1.303. Claude Code was called six times, with the hooks and without.
 
-The three and a half months of failure began with looking only at the first check and saying "it works." So that the same thing does not happen again, the reworked version will not be released until the second check passes.
+| Where the key comes from | Keys left, with the hooks | Keys left, without |
+|---|---|---|
+| Output of a successful command | 0 | 1 |
+| Output of a failed command | 1 | 1 |
+| A file that was written | 0 | 1 |
+
+The key in successful output reached me redacted, and the write that contained a key was blocked. The key in failed output reached me even with the hooks. As the table above says, that path cannot be redacted; only a notice is sent. In the runs with the hooks, the hooks started five times and ran to the end five times.
+
+The three and a half months of failure began with looking only at the first check and saying "it works." That is why I waited for the result of the second.
+
+These hooks are on the free side, and their code is not out yet. The other seven (Claude Code plugins) are sold at [mujo.25h.life](https://mujo.25h.life/#code) for 7 USD each.

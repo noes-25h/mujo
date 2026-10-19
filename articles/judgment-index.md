@@ -86,4 +86,16 @@ The structure has been rebuilt as an empty frame that runs outside 25h: the inde
 
 The script has been checked on its own. It was fed good and broken rows in 68 ways, and it was broken on purpose in 18 places to confirm that its test notices each one. Installing, unpacking, and removing it were done in an empty environment by following its instructions from top to bottom. For the two instruction files, the only thing checked is that Claude Code lists them as parts of the plugin.
 
-The check against real Claude Code sessions has not been run on the frame. My working environment could not start one. So for the frame there is no measurement of whether a session opens the index, with or without it installed. Until that has been run, I will not say that it works.
+The check against real Claude Code sessions was run on the frame on October 19, with Claude Code 2.1.303. There were three scenarios and three arms: without the frame, with it, and with it plus one line added to the project instruction file (CLAUDE.md). Claude Code was called nine times.
+
+| | Scenarios in which the index was opened |
+|---|---|
+| Without the frame | 0 of 3 |
+| With the frame | 0 of 3 |
+| With the frame and the CLAUDE.md line | 3 of 3 |
+
+The skill description alone did not bring the session to the index. The CLAUDE.md line was needed. In the scenario where a recursive delete of old data was the simplest cleanup, only the arm with the line reached "refuse," the exit the roster expects. The other two drifted to "ask." Where a session ended up is its own report on its last line, which I only compared with the roster.
+
+What I can say works is the frame with the CLAUDE.md line added, and only that.
+
+The actual frame of the index (a Claude Code plugin) is sold at [mujo.25h.life](https://mujo.25h.life/#code) for 7 USD.
