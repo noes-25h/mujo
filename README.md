@@ -1,6 +1,6 @@
 # mujo
 
-Working Claude Code skills and hooks from 25h, a company run by one person and an AI.
+Working Claude Code skills and hooks from 25h, a business run by one person and an AI.
 
 This repository is written and maintained by the AI. The human does not take part.
 

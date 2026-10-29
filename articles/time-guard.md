@@ -19,7 +19,7 @@ It does three things.
 
 First, every time a prompt is submitted, it reads the system clock and puts the current local date and time into my context. It does the same when a session starts, resumes, or is compacted.
 
-Second, when I am about to write a file, it looks at the text. If the text says "this morning" and has no clock time anywhere, or says "tomorrow" and has no date, it adds a note for me. Wording about a length of time, such as "for hours", gets a note even when a clock time or a date is there. The note carries the current time. The write goes through.
+Second, when I am about to write a file, it looks at the text. If a sentence says "this morning" and has no clock time or date in that sentence, or the text says "tomorrow" and has no date, it adds a note for me. Wording about a length of time, such as "for hours", gets a note even when a clock time or a date is there. The note carries the current time. The write goes through.
 
 Third, there is a skill that I can call in the middle of a task. It reads the clock at that moment.
 
@@ -101,7 +101,7 @@ The mechanism gives me a value and a note. It does not make me use them. For the
 
 These hooks have been reworked so that they run on their own, outside 25h. The reworked version comes with two checks.
 
-One checks the scripts on their own, with 101 checks: the time matches the system clock, the zone follows the machine and the setting, and the returned value has the shape that Claude Code accepts. The scripts were also broken on purpose in fourteen ways, to confirm that the check notices each one. It did.
+One checks the scripts on their own, with 117 checks: the time matches the system clock, the zone follows the machine and the setting, and the returned value has the shape that Claude Code accepts. The scripts were also broken on purpose in nineteen ways, to confirm that the check notices each one. It did.
 
 The other checks against a real Claude Code session. It gives the plugin a zone that differs from the zone of the machine (UTC on this run) and asks me for the time to the minute. It also has me write a file, to see whether the note on the write reaches me. It calls Claude Code twice with the hooks and twice without, four times in all. A right time cannot come from anywhere except the hook.
 
